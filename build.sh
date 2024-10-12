@@ -50,6 +50,30 @@ function build_binutils() {
 		--disable-libsanitizer
 
 	make -j$(nproc) && make install
+
+	rm -rf *
+}
+
+function build_gcc() {
+	../gcc/configure \
+		--target=riscv64-caffeinix \
+		--prefix=$root_path/bin \
+		--disable-werror \
+		--disable-bootstrap \
+		--enable-languages=c \
+		--disable-libstdcxx \
+		--without-headers \
+		--disable-libssp \
+		--disable-libquadmath \
+		--disable-libgomp \
+		--disable-libatomic \
+		--disable-libitm \
+		--disable-libvtv \
+		--disable-libsanitizer
+
+	make -j$(nproc) && make install
+
+	rm -rf *
 }
 
 function build_binutils1() {
@@ -60,6 +84,8 @@ function build_binutils1() {
 		-with-sysroot=$root_path/sysroot
 	
 	make -j$(nproc) && make install
+
+	rm -rf *
 }
 
 function build_gcc1() {
@@ -70,6 +96,8 @@ function build_gcc1() {
 		-with-sysroot=$root_path/sysroot
 
 	make -j$(nproc) && make install
+
+	rm -rf *
 }
 
 function build_newlib() {
@@ -80,16 +108,15 @@ function build_newlib() {
 	make -j$(nproc) && make DESTDIR=$root_path/sysroot install
 
 	cp -ar $root_path/sysroot/usr/riscv64-caffeinix/* $root_path/sysroot/usr
+
+	rm -rf *
 }
 
-echo $root_path
 init
-echo $(pwd)
 build_binutils
 build_gcc
 build_newlib
-rm -rf $root_path/bin
+rm -rf $root_path/bin/*
 build_binutils1
 build_gcc1
 cd ..
-rm -rf build
