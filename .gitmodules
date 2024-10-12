@@ -1,0 +1,9 @@
+[submodule "gcc"]
+	path = gcc
+	url = https://github.com/TroyMitchell911/gcc.git
+[submodule "newlib"]
+	path = newlib
+	url = https://github.com/TroyMitchell911/riscv-newlib.git
+[submodule "binutils"]
+	path = binutils
+	url = https://github.com/TroyMitchell911/binutils-gdb.git
