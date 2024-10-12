@@ -31,6 +31,7 @@ function init() {
 	export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
 	export PATH=$PATH:$root_path/bin/bin
 
+	git submodule init
 	git submodule update --recursive --remote
 }
 
