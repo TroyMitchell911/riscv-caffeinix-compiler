@@ -32,7 +32,7 @@ function init() {
 	export PATH=$PATH:$root_path/bin/bin
 
 	git submodule init
-	git submodule update --recursive --remote
+	git submodule update --recursive --remote --progress --depth 1
 }
 
 function build_binutils() {
