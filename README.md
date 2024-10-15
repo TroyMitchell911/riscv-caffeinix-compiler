@@ -22,7 +22,7 @@ On Ubuntu, executing the following command should suffice:
 
 ### Installation
 
-To compile a cross-toolchain, you must first specify an installation address. If you do not specify one, it will be installed in the current source directory.
+To compile a cross-toolchain, you must first specify an **installation path**. If you do not specify one, it will be installed in the current source directory.
 
     $ sudo ./build.sh --prefix=/opt/riscv-caffeinix
 
