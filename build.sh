@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -eu
+
 if [[ $# -gt 1 ]]; then
 	echo "Usage: $0 [--prefix=/your/path]"
 	exit 1
