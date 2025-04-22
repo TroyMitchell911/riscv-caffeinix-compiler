@@ -6,7 +6,6 @@ if [[ $# -gt 1 ]]; then
 	echo "Usage: $0 [--prefix=/your/path]"
 	exit 1
 fi
-echo $root_path
 
 root_path=$(pwd)
 
